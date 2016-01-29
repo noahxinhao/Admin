@@ -1,0 +1,21 @@
+{
+  "name": "李馨浩",
+  "id": "10001",
+  "basicInfo": {
+    "email": "870708429@qq.com",
+    "phone": "18721988563",
+    "address": "上海市杨浦区佳木斯路包头南路",
+    "emergencyContact": [
+      {
+        "name": "李志明",
+        "phone": "15021242961",
+        "contactRole": "兄弟姐妹"
+      }
+    ]
+  },
+  "positionInfo": {
+    "role": "催收员",
+    "group": "CS0001",
+    "entryDate": "2015-09-23"
+  }
+}
