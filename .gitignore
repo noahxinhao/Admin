@@ -6,3 +6,4 @@ build/
 .idea/
 *.zip
 www/index.html
+**/.DS_Store
