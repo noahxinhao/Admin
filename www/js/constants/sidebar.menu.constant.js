@@ -7,7 +7,7 @@
   angular.module('app.constants')
     .constant('SIDEBAR_MENU_DATA', [
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "客户",
           icon: 'fa-user'
@@ -15,27 +15,27 @@
         items: [
           {
             label: "正在催收",
-            href: "#/app/customers/potential",
+            href: "#/app/current"
           },
           {
             label: "待催收",
-            href: "#/app/customers/potential",
+            href: "#/app/biding"
           },
           {
             label: "催收完成",
-            href: "#/app/customers/potential",
+            href: "#/app/complete"
           }
         ]
       },
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "工作组",
           icon: 'fa-group'
         }
       },
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "个人信息",
           icon: 'fa-info-circle'
@@ -56,7 +56,7 @@
         ]
       },
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "设置",
           icon: 'fa-gears'
@@ -73,7 +73,7 @@
         ]
       },
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "系统消息",
           icon: 'fa-bell-o'
@@ -84,7 +84,7 @@
         }
       },
       {
-        href: "#",
+        href: "javascript:void(0)",
         elementA: {
           label: "消息",
           icon: 'fa-envelope-o'

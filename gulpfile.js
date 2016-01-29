@@ -43,7 +43,9 @@ var pluginOpt = {
         'lib/bootstrap-datepicker/js/bootstrap-datepicker.js',
         'lib/fastclick/lib/fastclick.js',
         'lib/jquery-knob/dist/jquery.knob.min.js',
-        'lib/angular/angular.min.js'
+        'lib/angular/angular.min.js',
+        'lib/datatables/media/js/jquery.dataTables.min.js',
+        'lib/datatables/media/js/dataTables.bootstrap.min.js'
       ],
       application: [
         'js/app.js',

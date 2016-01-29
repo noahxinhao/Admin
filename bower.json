@@ -42,7 +42,8 @@
     "oclazyload": "ocLazyLoad#~1.0.9",
     "iCheck": "~1.0.2",
     "jvectormap": "~2.0.4",
-    "sparkline": "~2.1.2"
+    "sparkline": "~2.1.2",
+    "datatables": "~1.10.10"
   },
   "overrides": {
     "bootstrap": {
@@ -140,12 +141,21 @@
     },
     "angular-loading-bar": {
       "main": [
-        "build/loading-bar.min.js"
+        "build/loading-bar.min.js",
+        "build/loading-bar.min.css"
+
       ]
     },
     "oclazyload": {
       "main": [
         "dist/ocLazyLoad.min.js"
+      ]
+    },
+    "datatables": {
+      "main": [
+        "media/css/dataTables.bootstrap.min.css",
+        "media/js/jquery.dataTables.min.js",
+        "media/js/dataTables.bootstrap.min.js"
       ]
     }
   }
