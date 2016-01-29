@@ -9,12 +9,20 @@
       {
         href: "#",
         elementA: {
-          label: "数据监控",
-          icon: 'fa-dashboard'
+          label: "客户",
+          icon: 'fa-user'
         },
         items: [
           {
-            label: "潜在客户",
+            label: "正在催收",
+            href: "#/app/customers/potential",
+          },
+          {
+            label: "待催收",
+            href: "#/app/customers/potential",
+          },
+          {
+            label: "催收完成",
             href: "#/app/customers/potential",
           }
         ]
@@ -22,42 +30,53 @@
       {
         href: "#",
         elementA: {
-          label: "数据监控",
-          icon: 'fa-th'
-        },
-        note: {
-          bgClass: "bg-red",
-          text: "3"
+          label: "工作组",
+          icon: 'fa-group'
+        }
+      },
+      {
+        href: "#",
+        elementA: {
+          label: "个人信息",
+          icon: 'fa-info-circle'
         },
         items: [
           {
-            label: "潜在客户",
+            label: "考勤",
             href: "#/app/customers/potential",
-            items: [
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              },
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              },
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              }
-            ]
+          },
+          {
+            label: "业绩",
+            href: "#/app/customers/potential",
+          },
+          {
+            label: "提醒事件",
+            href: "#/app/customers/potential",
           }
         ]
       },
       {
         href: "#",
         elementA: {
-          label: "数据监控",
-          icon: 'fa-calendar'
+          label: "设置",
+          icon: 'fa-gears'
+        },
+        items: [
+          {
+            label: "个人信息设置",
+            href: "#/app/customers/potential"
+          },
+          {
+            label: "个人信息设置",
+            href: "#/app/customers/potential"
+          }
+        ]
+      },
+      {
+        href: "#",
+        elementA: {
+          label: "系统消息",
+          icon: 'fa-bell-o'
         },
         note: {
           bgClass: "bg-green",
@@ -67,34 +86,17 @@
       {
         href: "#",
         elementA: {
-          label: "数据监控",
-          icon: 'fa-pie-chart'
-        },
-        note: {
-          bgClass: "bg-yellow",
-          text: "3"
+          label: "消息",
+          icon: 'fa-envelope-o'
         },
         items: [
           {
-            label: "潜在客户",
-            href: "#/app/customers/potential",
-            items: [
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              },
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              },
-              {
-                label: "潜在客户",
-                href: "#/app/customers/potential",
-                items: []
-              }
-            ]
+            label: "系统通知",
+            href: "#/app/customers/potential"
+          },
+          {
+            label: "协助请求",
+            href: "#/app/customers/potential"
           }
         ]
       }
