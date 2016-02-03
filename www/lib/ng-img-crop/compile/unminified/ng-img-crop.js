@@ -649,7 +649,7 @@ crop.service('cropEXIF', [function() {
       0xA20F : "FocalPlaneYResolution",   // Number of pixels in height direction per FocalPlaneResolutionUnit
       0xA210 : "FocalPlaneResolutionUnit",    // Unit for measuring FocalPlaneXResolution and FocalPlaneYResolution
       0xA214 : "SubjectLocation",         // Location of subject in image
-      0xA215 : "ExposureIndex",           // Exposure index selected on camera
+      0xA215 : "ExposureIndex",           // Exposure adminlte selected on camera
       0xA217 : "SensingMethod",           // Image sensor type
       0xA300 : "FileSource",              // Image source (3 == DSC)
       0xA301 : "SceneType",               // Scene type (1 == directly photographed)
@@ -1857,7 +1857,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
         updateResultImage(scope);
       });
 
-      // Update CropHost dimensions when the directive element is resized
+      // Update CropHost dimensions when the directives element is resized
       scope.$watch(
         function () {
           return [element[0].clientWidth, element[0].clientHeight];
@@ -1869,7 +1869,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
         true
       );
 
-      // Destroy CropHost Instance when the directive is destroying
+      // Destroy CropHost Instance when the directives is destroying
       scope.$on('$destroy', function(){
           cropHost.destroy();
       });

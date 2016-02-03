@@ -100,7 +100,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
         updateResultImage(scope);
       });
 
-      // Update CropHost dimensions when the directive element is resized
+      // Update CropHost dimensions when the directives element is resized
       scope.$watch(
         function () {
           return [element[0].clientWidth, element[0].clientHeight];
@@ -112,7 +112,7 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
         true
       );
 
-      // Destroy CropHost Instance when the directive is destroying
+      // Destroy CropHost Instance when the directives is destroying
       scope.$on('$destroy', function(){
           cropHost.destroy();
       });

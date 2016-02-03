@@ -3,23 +3,20 @@
 
   angular.module('app.controllers').controller('currentCtrl', currentCtrl);
 
-  currentCtrl.$inject = ['$scope', 'customerService','$timeout'];
+  currentCtrl.$inject = ['$scope', 'customerService', '$ocLazyLoad', '$timeout'];
 
-  function currentCtrl($scope, customerService,$timeout) {
+  function currentCtrl($scope, customerService, $ocLazyLoad, $timeout) {
     var vm = this;
+
+    $ocLazyLoad.load({
+      cache: true,
+      files: ['js/adminlte/pages/current.page.js']
+    });
 
     customerService.currentCustomer().then(function (data) {
       vm.currentCustomerList = data;
-      $timeout(function(){
-        $('#customerTables').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-      },1000)
+
+
     });
   }
 })();

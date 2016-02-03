@@ -447,7 +447,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  *
  * @description
  * The `$animateCss` service is a useful utility to trigger customized CSS-based transitions/keyframes
- * from a JavaScript-based animation or directly from a directive. The purpose of `$animateCss` is NOT
+ * from a JavaScript-based animation or directly from a directives. The purpose of `$animateCss` is NOT
  * to side-step how `$animate` and ngAnimate work, but the goal is to allow pre-existing animations or
  * directives to create more complex animations that can be purely driven using CSS code.
  *
@@ -456,7 +456,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  *
  * ## Usage
  * Once again, `$animateCss` is designed to be used inside of a registered JavaScript animation that
- * is powered by ngAnimate. It is possible to use `$animateCss` directly inside of a directive, however,
+ * is powered by ngAnimate. It is possible to use `$animateCss` directly inside of a directives, however,
  * any automatic control over cancelling animations and/or preventing animations from being run on
  * child elements will not be handled by Angular. For this to work as expected, please use `$animate` to
  * trigger the animation and then setup a JavaScript animation that injects `$animateCss` to trigger
@@ -641,7 +641,7 @@ var ANIMATE_TIMER_KEY = '$$animateCss';
  * CSS delay value.
  * * `stagger` - A numeric time value representing the delay between successively animated elements
  * ({@link ngAnimate#css-staggering-animations Click here to learn how CSS-based staggering works in ngAnimate.})
- * * `staggerIndex` - The numeric index representing the stagger item (e.g. a value of 5 is equal to the sixth item in the stagger; therefore when a
+ * * `staggerIndex` - The numeric adminlte representing the stagger item (e.g. a value of 5 is equal to the sixth item in the stagger; therefore when a
  * * `stagger` option value of `0.1` is used then there will be a stagger delay of `600ms`)
  * * `applyClassesEarly` - Whether or not the classes being added or removed will be used when detecting the animation. This is set by `$animate` when enter/leave/move animations are fired to ensure that the CSS classes are resolved in time. (Note that this will prevent any transitions from occuring on the classes being added and removed.)
  * * `cleanupStyles` - Whether or not the provided `from` and `to` styles will be removed once
@@ -2169,7 +2169,7 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
       };
     }
 
-    // Wait until all directive and route-related templates are downloaded and
+    // Wait until all directives and route-related templates are downloaded and
     // compiled. The $templateRequest.totalPendingRequests variable keeps track of
     // all of the remote templates being currently downloaded. If there are no
     // templates currently downloading then the watcher will still fire anyway.
@@ -2362,7 +2362,7 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
         options.to = null;
       }
 
-      // there are situations where a directive issues an animation for
+      // there are situations where a directives issues an animation for
       // a jqLite wrapper that contains only comment nodes... If this
       // happens then there is no way we can perform an animation
       if (!node) {
@@ -3154,23 +3154,23 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  *
  * | Directive                                                                                                | Supported Animations                                                     |
  * |----------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
- * | {@link ng.directive:ngRepeat#animations ngRepeat}                                                        | enter, leave and move                                                    |
- * | {@link ngRoute.directive:ngView#animations ngView}                                                       | enter and leave                                                          |
- * | {@link ng.directive:ngInclude#animations ngInclude}                                                      | enter and leave                                                          |
- * | {@link ng.directive:ngSwitch#animations ngSwitch}                                                        | enter and leave                                                          |
- * | {@link ng.directive:ngIf#animations ngIf}                                                                | enter and leave                                                          |
- * | {@link ng.directive:ngClass#animations ngClass}                                                          | add and remove (the CSS class(es) present)                               |
- * | {@link ng.directive:ngShow#animations ngShow} & {@link ng.directive:ngHide#animations ngHide}            | add and remove (the ng-hide class value)                                 |
- * | {@link ng.directive:form#animation-hooks form} & {@link ng.directive:ngModel#animation-hooks ngModel}    | add and remove (dirty, pristine, valid, invalid & all other validations) |
+ * | {@link ng.directives:ngRepeat#animations ngRepeat}                                                        | enter, leave and move                                                    |
+ * | {@link ngRoute.directives:ngView#animations ngView}                                                       | enter and leave                                                          |
+ * | {@link ng.directives:ngInclude#animations ngInclude}                                                      | enter and leave                                                          |
+ * | {@link ng.directives:ngSwitch#animations ngSwitch}                                                        | enter and leave                                                          |
+ * | {@link ng.directives:ngIf#animations ngIf}                                                                | enter and leave                                                          |
+ * | {@link ng.directives:ngClass#animations ngClass}                                                          | add and remove (the CSS class(es) present)                               |
+ * | {@link ng.directives:ngShow#animations ngShow} & {@link ng.directives:ngHide#animations ngHide}            | add and remove (the ng-hide class value)                                 |
+ * | {@link ng.directives:form#animation-hooks form} & {@link ng.directives:ngModel#animation-hooks ngModel}    | add and remove (dirty, pristine, valid, invalid & all other validations) |
  * | {@link module:ngMessages#animations ngMessages}                                                          | add and remove (ng-active & ng-inactive)                                 |
  * | {@link module:ngMessages#animations ngMessage}                                                           | enter and leave                                                          |
  *
- * (More information can be found by visiting each the documentation associated with each directive.)
+ * (More information can be found by visiting each the documentation associated with each directives.)
  *
  * ## CSS-based Animations
  *
  * CSS-based animations with ngAnimate are unique since they require no JavaScript code at all. By using a CSS class that we reference between our HTML
- * and CSS code we can create an animation that will be picked up by Angular when an the underlying directive performs an operation.
+ * and CSS code we can create an animation that will be picked up by Angular when an the underlying directives performs an operation.
  *
  * The example below shows how an `enter` animation can be made possible on an element using `ng-if`:
  *
@@ -3327,16 +3327,16 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * ```js
  * var kids = parent.children();
  *
- * $animate.leave(kids[0]); //stagger index=0
- * $animate.leave(kids[1]); //stagger index=1
- * $animate.leave(kids[2]); //stagger index=2
- * $animate.leave(kids[3]); //stagger index=3
- * $animate.leave(kids[4]); //stagger index=4
+ * $animate.leave(kids[0]); //stagger adminlte=0
+ * $animate.leave(kids[1]); //stagger adminlte=1
+ * $animate.leave(kids[2]); //stagger adminlte=2
+ * $animate.leave(kids[3]); //stagger adminlte=3
+ * $animate.leave(kids[4]); //stagger adminlte=4
  *
  * window.requestAnimationFrame(function() {
  *   //stagger has reset itself
- *   $animate.leave(kids[5]); //stagger index=0
- *   $animate.leave(kids[6]); //stagger index=1
+ *   $animate.leave(kids[5]); //stagger adminlte=0
+ *   $animate.leave(kids[6]); //stagger adminlte=1
  *
  *   $scope.$digest();
  * });
@@ -3544,7 +3544,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * Say for example we have the following template code:
  *
  * ```html
- * <!-- index.html -->
+ * <!-- adminlte.html -->
  * <div ng-view class="view-animation">
  * </div>
  *
@@ -3636,7 +3636,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
            id="anchoringExample"
            deps="angular-animate.js;angular-route.js"
            animations="true">
-    <file name="index.html">
+    <file name="adminlte.html">
       <a href="#/">Home</a>
       <hr />
       <div class="view-container">
@@ -3673,8 +3673,8 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
           //empty
         }])
         .controller('ProfileController', ['$rootScope', '$routeParams', function($rootScope, $routeParams) {
-          var index = parseInt($routeParams.id, 10);
-          var record = $rootScope.records[index - 1];
+          var adminlte = parseInt($routeParams.id, 10);
+          var record = $rootScope.records[adminlte - 1];
 
           this.title = record.title;
           this.id = record.id;
@@ -3758,10 +3758,10 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * Note that if the root element is on the `<html>` element then the cloned node will be placed inside of body.
  *
  *
- * ## Using $animate in your directive code
+ * ## Using $animate in your directives code
  *
  * So far we've explored how to feed in animations into an Angular application, but how do we trigger animations within our own directives in our application?
- * By injecting the `$animate` service into our directive code, we can trigger structural and class-based hooks which can then be consumed by animations. Let's
+ * By injecting the `$animate` service into our directives code, we can trigger structural and class-based hooks which can then be consumed by animations. Let's
  * imagine we have a greeting box that shows and hides itself when the data changes
  *
  * ```html
@@ -3769,7 +3769,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * ```
  *
  * ```js
- * ngModule.directive('greetingBox', ['$animate', function($animate) {
+ * ngModule.directives('greetingBox', ['$animate', function($animate) {
  *   return function(scope, element, attrs) {
  *     attrs.$observe('active', function(value) {
  *       value ? $animate.addClass(element, 'on') : $animate.removeClass(element, 'on');
@@ -3818,11 +3818,11 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * ## Callbacks and Promises
  *
  * When `$animate` is called it returns a promise that can be used to capture when the animation has ended. Therefore if we were to trigger
- * an animation (within our directive code) then we can continue performing directive and scope related activities after the animation has
+ * an animation (within our directives code) then we can continue performing directives and scope related activities after the animation has
  * ended by chaining onto the returned promise that animation method returns.
  *
  * ```js
- * // somewhere within the depths of the directive
+ * // somewhere within the depths of the directives
  * $animate.enter(element, parent).then(function() {
  *   //the animation has completed
  * });

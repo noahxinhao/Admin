@@ -11,7 +11,7 @@
       })
       .state('app', {
         url: '/app',
-        templateUrl: 'templates/main.html',
+        templateUrl: 'templates/system/main.html',
         controller: 'mainCtrl',
         controllerAs: 'main'
       })
@@ -41,6 +41,71 @@
           }
         }
       })
+      .state('app.detail', {
+        url: '/debt/detail',
+        views: {
+          "content": {
+            templateUrl: 'templates/debtCustomer/detail.html',
+            controller: 'detailCtrl',
+            controllerAs: 'detail'
+          }
+        }
+      })
+      .state('app.group', {
+        url: '/group',
+        views: {
+          "content": {
+            templateUrl: 'templates/group/working-group.html'
+          }
+        }
+      })
+      .state('app.attendance', {
+        url: '/attendance',
+        views: {
+          "content": {
+            templateUrl: 'templates/user/attendance.html'
+          }
+        }
+      }).state('app.achievement', {
+        url: '/achievement',
+        views: {
+          "content": {
+            templateUrl: 'templates/user/achievement.html'
+          }
+        }
+      })
+      .state('app.setting', {
+        url: '/setting',
+        views: {
+          "content": {
+            templateUrl: 'templates/user/setting.html'
+          }
+        }
+      })
+      .state('app.assistRequest', {
+        url: '/assistRequest',
+        views: {
+          "content": {
+            templateUrl: 'templates/notice/assist-request.html'
+          }
+        }
+      })
+      .state('app.eventReminder', {
+        url: '/eventReminder',
+        views: {
+          "content": {
+            templateUrl: 'templates/notice/event-reminder.html'
+          }
+        }
+      })
+      .state('app.systemNotice', {
+        url: '/systemNotice',
+        views: {
+          "content": {
+            templateUrl: 'templates/notice/system-notice.html'
+          }
+        }
+      })
       .state('app.dashboard', {
         url: '/dashboard',
         views: {
@@ -52,6 +117,6 @@
         }
       });
 
-    $urlRouterProvider.otherwise('/app/dashboard');
+    $urlRouterProvider.otherwise('/login');
   }
 })();

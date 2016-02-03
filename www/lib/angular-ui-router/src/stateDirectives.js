@@ -37,7 +37,7 @@ function clickHook(el, $state, $timeout, type, current) {
       });
       e.preventDefault();
 
-      // if the state has no URL, ignore one preventDefault from the <a> directive.
+      // if the state has no URL, ignore one preventDefault from the <a> directives.
       var ignorePreventDefaultCount = type.isAnchor && !target.href ? 1: 0;
 
       e.preventDefault = function() {
@@ -52,8 +52,8 @@ function defaultOpts(el, $state) {
 }
 
 /**
- * @ngdoc directive
- * @name ui.router.state.directive:ui-sref
+ * @ngdoc directives
+ * @name ui.router.state.directives:ui-sref
  *
  * @requires ui.router.state.$state
  * @requires $timeout
@@ -61,8 +61,8 @@ function defaultOpts(el, $state) {
  * @restrict A
  *
  * @description
- * A directive that binds a link (`<a>` tag) to a state. If the state has an associated
- * URL, the directive will automatically generate & update the `href` attribute via
+ * A directives that binds a link (`<a>` tag) to a state. If the state has an associated
+ * URL, the directives will automatically generate & update the `href` attribute via
  * the {@link ui.router.state.$state#methods_href $state.href()} method. Clicking
  * the link will trigger a state transition with optional parameters.
  *
@@ -147,8 +147,8 @@ function $StateRefDirective($state, $timeout) {
 }
 
 /**
- * @ngdoc directive
- * @name ui.router.state.directive:ui-state
+ * @ngdoc directives
+ * @name ui.router.state.directives:ui-state
  *
  * @requires ui.router.state.uiSref
  *
@@ -193,8 +193,8 @@ function $StateRefDynamicDirective($state, $timeout) {
 
 
 /**
- * @ngdoc directive
- * @name ui.router.state.directive:ui-sref-active
+ * @ngdoc directives
+ * @name ui.router.state.directives:ui-sref-active
  *
  * @requires ui.router.state.$state
  * @requires ui.router.state.$stateParams
@@ -203,8 +203,8 @@ function $StateRefDynamicDirective($state, $timeout) {
  * @restrict A
  *
  * @description
- * A directive working alongside ui-sref to add classes to an element when the
- * related ui-sref directive's state is active, and removing them when it is inactive.
+ * A directives working alongside ui-sref to add classes to an element when the
+ * related ui-sref directives's state is active, and removing them when it is inactive.
  * The primary use-case is to simplify the special appearance of navigation menus
  * relying on `ui-sref`, by having the "active" state's menu button appear different,
  * distinguishing it from the inactive menu items.
@@ -215,7 +215,7 @@ function $StateRefDynamicDirective($state, $timeout) {
  * Will activate when the ui-sref's target state or any child state is active. If you
  * need to activate only when the ui-sref target state is active and *not* any of
  * it's children, then you will use
- * {@link ui.router.state.directive:ui-sref-active-eq ui-sref-active-eq}
+ * {@link ui.router.state.directives:ui-sref-active-eq ui-sref-active-eq}
  *
  * @example
  * Given the following template:
@@ -270,8 +270,8 @@ function $StateRefDynamicDirective($state, $timeout) {
  */
 
 /**
- * @ngdoc directive
- * @name ui.router.state.directive:ui-sref-active-eq
+ * @ngdoc directives
+ * @name ui.router.state.directives:ui-sref-active-eq
  *
  * @requires ui.router.state.$state
  * @requires ui.router.state.$stateParams
@@ -280,7 +280,7 @@ function $StateRefDynamicDirective($state, $timeout) {
  * @restrict A
  *
  * @description
- * The same as {@link ui.router.state.directive:ui-sref-active ui-sref-active} but will only activate
+ * The same as {@link ui.router.state.directives:ui-sref-active ui-sref-active} but will only activate
  * when the exact target state used in the `ui-sref` is active; no child states.
  *
  */
@@ -292,7 +292,7 @@ function $StateRefActiveDirective($state, $stateParams, $interpolate) {
       var states = [], activeClasses = {}, activeEqClass, uiSrefActive;
 
       // There probably isn't much point in $observing this
-      // uiSrefActive and uiSrefActiveEq share the same directive object with some
+      // uiSrefActive and uiSrefActiveEq share the same directives object with some
       // slight difference in logic routing
       activeEqClass = $interpolate($attrs.uiSrefActiveEq || '', false)($scope);
 

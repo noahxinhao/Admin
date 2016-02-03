@@ -368,7 +368,7 @@
             'padding: 5px;' +
             'border: 1px solid white;' +
             'box-sizing: content-box;' +
-            'z-index: 10000;' +
+            'z-adminlte: 10000;' +
             '}' +
             '.jqsfield { ' +
             'color: white;' +

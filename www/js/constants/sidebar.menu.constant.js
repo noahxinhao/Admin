@@ -28,7 +28,7 @@
         ]
       },
       {
-        href: "javascript:void(0)",
+        href: "#/app/group",
         elementA: {
           label: "工作组",
           icon: 'fa-group'
@@ -43,45 +43,17 @@
         items: [
           {
             label: "考勤",
-            href: "#/app/customers/potential",
+            href: "#/app/attendance",
           },
           {
             label: "业绩",
-            href: "#/app/customers/potential",
-          },
-          {
-            label: "提醒事件",
-            href: "#/app/customers/potential",
-          }
-        ]
-      },
-      {
-        href: "javascript:void(0)",
-        elementA: {
-          label: "设置",
-          icon: 'fa-gears'
-        },
-        items: [
-          {
-            label: "个人信息设置",
-            href: "#/app/customers/potential"
+            href: "#/app/achievement",
           },
           {
             label: "个人信息设置",
-            href: "#/app/customers/potential"
+            href: "#/app/setting"
           }
         ]
-      },
-      {
-        href: "javascript:void(0)",
-        elementA: {
-          label: "系统消息",
-          icon: 'fa-bell-o'
-        },
-        note: {
-          bgClass: "bg-green",
-          text: "new"
-        }
       },
       {
         href: "javascript:void(0)",
@@ -92,11 +64,15 @@
         items: [
           {
             label: "系统通知",
-            href: "#/app/customers/potential"
+            href: "#/app/systemNotice"
           },
           {
             label: "协助请求",
-            href: "#/app/customers/potential"
+            href: "#/app/assistRequest"
+          },
+          {
+            label: "提醒事件",
+            href: "#/app/eventReminder"
           }
         ]
       }

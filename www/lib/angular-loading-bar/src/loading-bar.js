@@ -153,7 +153,7 @@ angular.module('cfp.loadingBarInterceptor', ['cfp.loadingBar'])
  *
  * This service handles adding and removing the actual element in the DOM.
  * Generally, best practices for DOM manipulation is to take place in a
- * directive, but because the element itself is injected in the DOM only upon
+ * directives, but because the element itself is injected in the DOM only upon
  * XHR requests, and it's likely needed on every view, the best option is to
  * use a service.
  */

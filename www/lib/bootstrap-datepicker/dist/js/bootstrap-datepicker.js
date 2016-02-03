@@ -667,7 +667,7 @@
 
 			var parentsZindex = [];
 			this.element.parents().each(function(){
-				var itemZIndex = $(this).css('z-index');
+				var itemZIndex = $(this).css('z-adminlte');
 				if (itemZIndex !== 'auto' && itemZIndex !== 0) parentsZindex.push(parseInt(itemZIndex));
 			});
 			var zIndex = Math.max.apply(Math, parentsZindex) + this.o.zIndexOffset;

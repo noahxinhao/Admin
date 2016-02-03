@@ -19,6 +19,8 @@
     'ngAnimate',
     'ui.router',
     'angular-loading-bar',
+    'oc.lazyLoad',
+    'ui.bootstrap',
 
     'app.router',
     'app.constants',

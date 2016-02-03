@@ -200,7 +200,7 @@ ngTouch.factory('$swipe', [function() {
 */
 
 /**
- * @ngdoc directive
+ * @ngdoc directives
  * @name ngClick
  *
  * @description
@@ -211,10 +211,10 @@ ngTouch.factory('$swipe', [function() {
  *
  * Requires the {@link ngTouch `ngTouch`} module to be installed.
  *
- * This directive can fall back to using an ordinary click event, and so works on desktop
+ * This directives can fall back to using an ordinary click event, and so works on desktop
  * browsers as well as mobile.
  *
- * This directive also sets the CSS class `ng-click-active` while the element is being held
+ * This directives also sets the CSS class `ng-click-active` while the element is being held
  * down (by a mouse click or touch) so you can restyle the depressed element if you wish.
  *
  * @element ANY
@@ -223,7 +223,7 @@ ngTouch.factory('$swipe', [function() {
  *
  * @example
     <example module="ngClickExample" deps="angular-touch.js">
-      <file name="index.html">
+      <file name="adminlte.html">
         <button ng-click="count = count + 1" ng-init="count=0">
           Increment
         </button>
@@ -237,7 +237,7 @@ ngTouch.factory('$swipe', [function() {
 
 ngTouch.config(['$provide', function($provide) {
   $provide.decorator('ngClickDirective', ['$delegate', function($delegate) {
-    // drop the default ngClick directive
+    // drop the default ngClick directives
     $delegate.shift();
     return $delegate;
   }]);
@@ -471,7 +471,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
     // - On desktop browsers without touch events, their clicks will always come here.
     // - On mobile browsers, the simulated "fast" click will call this.
     // - But the browser's follow-up slow click will be "busted" before it reaches this handler.
-    // Therefore it's safe to use this directive on both mobile and desktop.
+    // Therefore it's safe to use this directives on both mobile and desktop.
     element.on('click', function(event, touchend) {
       scope.$apply(function() {
         clickHandler(scope, {$event: (touchend || event)});
@@ -492,7 +492,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
 /* global ngTouch: false */
 
 /**
- * @ngdoc directive
+ * @ngdoc directives
  * @name ngSwipeLeft
  *
  * @description
@@ -512,7 +512,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
  *
  * @example
     <example module="ngSwipeLeftExample" deps="angular-touch.js">
-      <file name="index.html">
+      <file name="adminlte.html">
         <div ng-show="!showActions" ng-swipe-left="showActions = true">
           Some list content, like an email in the inbox
         </div>
@@ -528,7 +528,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
  */
 
 /**
- * @ngdoc directive
+ * @ngdoc directives
  * @name ngSwipeRight
  *
  * @description
@@ -545,7 +545,7 @@ ngTouch.directive('ngClick', ['$parse', '$timeout', '$rootElement',
  *
  * @example
     <example module="ngSwipeRightExample" deps="angular-touch.js">
-      <file name="index.html">
+      <file name="adminlte.html">
         <div ng-show="!showActions" ng-swipe-left="showActions = true">
           Some list content, like an email in the inbox
         </div>
@@ -580,7 +580,7 @@ function makeSwipeDirective(directiveName, direction, eventName) {
         // Horizontal distance, we take the current X - the starting X.
         // This is negative for leftward swipes and positive for rightward swipes.
         // After multiplying by the direction (-1 for left, +1 for right), legal swipes
-        // (ie. same direction as the directive wants) will have a positive delta and
+        // (ie. same direction as the directives wants) will have a positive delta and
         // illegal ones a negative delta.
         // Therefore this delta must be positive, and larger than the minimum.
         if (!startCoords) return false;

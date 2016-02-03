@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    grunt.config('copy.index-files', {
+    grunt.config('copy.adminlte-files', {
         expand: true,
         cwd: 'build/umd/',
         src: [
@@ -12,5 +12,5 @@ module.exports = function (grunt) {
         dest: '.'
     });
 
-    grunt.registerTask('update-index', ['copy:index-files']);
+    grunt.registerTask('update-adminlte', ['copy:adminlte-files']);
 };

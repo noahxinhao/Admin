@@ -43,7 +43,9 @@
     "iCheck": "~1.0.2",
     "jvectormap": "~2.0.4",
     "sparkline": "~2.1.2",
-    "datatables": "~1.10.10"
+    "datatables": "~1.10.10",
+    "angular-modal-service": "~0.6.9",
+    "angular-bootstrap": "~1.1.2"
   },
   "overrides": {
     "bootstrap": {
@@ -81,7 +83,8 @@
     },
     "iCheck": {
       "main": [
-        "skins/flat/blue.css"
+        "skins/flat/blue.css",
+        "icheck.min.js"
       ]
     },
     "jquery-knob": {
@@ -143,7 +146,6 @@
       "main": [
         "build/loading-bar.min.js",
         "build/loading-bar.min.css"
-
       ]
     },
     "oclazyload": {

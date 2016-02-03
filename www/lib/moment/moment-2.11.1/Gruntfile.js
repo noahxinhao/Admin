@@ -197,10 +197,10 @@ module.exports = function (grunt) {
     grunt.registerTask('test', ['test:node']);
     grunt.registerTask('test:node', ['transpile', 'qtest']);
     // TODO: For some weird reason karma doesn't like the files in
-    // build/umd/min/* but works with min/*, so update-index, then git checkout
-    grunt.registerTask('test:server', ['transpile', 'update-index', 'karma:server']);
-    grunt.registerTask('test:browser', ['transpile', 'update-index', 'karma:chrome', 'karma:firefox']);
-    grunt.registerTask('test:sauce-browser', ['transpile', 'update-index', 'env:sauceLabs', 'karma:sauce']);
+    // build/umd/min/* but works with min/*, so update-adminlte, then git checkout
+    grunt.registerTask('test:server', ['transpile', 'update-adminlte', 'karma:server']);
+    grunt.registerTask('test:browser', ['transpile', 'update-adminlte', 'karma:chrome', 'karma:firefox']);
+    grunt.registerTask('test:sauce-browser', ['transpile', 'update-adminlte', 'env:sauceLabs', 'karma:sauce']);
     grunt.registerTask('test:meteor', ['exec:meteor-init', 'exec:meteor-test', 'exec:meteor-cleanup']);
 
     // travis build task
@@ -210,7 +210,7 @@ module.exports = function (grunt) {
     // Task to be run when releasing a new version
     grunt.registerTask('release', [
         'default',
-        'update-index',
+        'update-adminlte',
         'component',
         'uglify:main'
     ]);

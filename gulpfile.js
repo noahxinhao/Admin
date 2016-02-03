@@ -15,6 +15,7 @@ var gulp = require('gulp')
   , browserSync = require('browser-sync').create()
   , minifyCss = require('gulp-minify-css')
   , gzip = require('gulp-gzip')
+  , stripDebug = require('gulp-strip-debug')
   , imagemin = require('gulp-imagemin')
   , html2js = require('gulp-html2js')
   , del = require('del')
@@ -53,7 +54,7 @@ var pluginOpt = {
         'js/services/*.service.js',
         'js/controllers/*.controller.js',
         'js/constants/*.constant.js',
-        'js/directive/*.directive.js',
+        'js/directives/*.directive.js',
         'js/filter/*.filter.js'
       ],
       components: [
@@ -62,7 +63,8 @@ var pluginOpt = {
         'components/jvectormap/jquery-jvectormap-world-mill-en.js',
         'components/daterangepicker/daterangepicker.js',
         'components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
-        'components/slimScroll/jquery.slimscroll.min.js'
+        'components/slimScroll/jquery.slimscroll.min.js',
+        'components/iCheck/icheck.min.js'
       ]
     },
     css: {
@@ -82,6 +84,7 @@ var pluginOpt = {
         'components/morris/morris.css',
         'components/jvectormap/jquery-jvectormap-1.2.2.css',
         'components/datepicker/datepicker3.css',
+        'components/iCheck/square/blue.css',
         'components/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
       ]
     }
@@ -144,7 +147,7 @@ var filePathConf = {
         'www/js/services/**/*.service.js',
         'www/js/controllers/**/*.controller.js',
         'www/js/constants/**/*.constant.js',
-        'www/js/directive/**/*.directive.js',
+        'www/js/directives/**/*.directive.js',
         'www/js/filter/**/*.filter.js'
       ],
       components: [
@@ -153,7 +156,8 @@ var filePathConf = {
         'www/components/jvectormap/jquery-jvectormap-world-mill-en.js',
         'www/components/daterangepicker/daterangepicker.js',
         'www/components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
-        'www/components/slimScroll/jquery.slimscroll.min.js'
+        'www/components/slimScroll/jquery.slimscroll.min.js',
+        'www/components/iCheck/icheck.min.js'
       ]
     },
     css: {
@@ -165,6 +169,7 @@ var filePathConf = {
       components: [
         'www/components/morris/morris.css',
         'www/components/jvectormap/jquery-jvectormap-1.2.2.css',
+        'www/components/iCheck/square/blue.css',
         'www/components/datepicker/datepicker3.css',
         'www/components/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'
       ]
@@ -205,7 +210,7 @@ var filePathConf = {
 //清理构建目录
 gulp.task('clean', function (cb) {
   del('build/');
-  del('www/index.html', cb())
+  del('www/adminlte.html', cb())
 });
 
 //压缩图片
@@ -256,6 +261,76 @@ gulp.task('local-build', function () {
     .pipe(gulp.dest('www/'));
 });
 
+//本地构建
+gulp.task('build', function () {
+  var bowerStyleSource = gulp.src(filePathConf.bower.lib.css, {base: 'www/'})
+    .pipe(order(pluginOpt.order.css.lib))
+    .pipe(concat("bower_lib_style.css"))
+    .pipe(gulp.dest('build/css/'))
+    .pipe(minifyCss())
+    .pipe(md5(12))
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(gulp.dest('build/css/'));
+
+  var bowerScriptSource = gulp.src(filePathConf.bower.lib.js, {base: 'www/'})
+    .pipe(order(pluginOpt.order.js.lib))
+    .pipe(ngAnnotate())
+    .pipe(concat('bower_lib_script.js'))
+    .pipe(gulp.dest('build/js/'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(md5(12))
+    .pipe(gulp.dest('build/js/'));
+
+  var applicationScriptSource = gulp.src(filePathConf.static.js.application, {base: "www/"})
+    .pipe(order(pluginOpt.order.js.application))
+    .pipe(ngAnnotate())
+    .pipe(concat('dest_application_script.js'))
+    .pipe(gulp.dest('build/js/'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(md5(12))
+    .pipe(rename({extname: '.min.js'}))
+    .pipe(gulp.dest('build/js/'));
+
+  //var applicationStyleSource = gulp.src(filePathConf.static.css.application, {base: "www/"})
+  //  .pipe(order(pluginOpt.order.css.application))
+  //  .pipe(concat("application_style.css"))
+  //  .pipe(gulp.dest('build/css/'))
+  //  .pipe(minifyCss())
+  //  .pipe(md5(12))
+  //  .pipe(rename({extname: '.min.css'}))
+  //  .pipe(gulp.dest('build/css/'));
+
+  var componentsScriptSource = gulp.src(filePathConf.static.js.components, {base: "www/"})
+    .pipe(order(pluginOpt.order.js.components))
+    .pipe(ngAnnotate())
+    .pipe(concat('components_script.js'))
+    .pipe(gulp.dest('build/js/'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(md5(12))
+    .pipe(gulp.dest('build/js/'));
+
+  var componentsStyleSource = gulp.src(filePathConf.static.css.components, {base: "www/"})
+    .pipe(order(pluginOpt.order.css.components))
+    .pipe(concat("components_style.css"))
+    .pipe(gulp.dest('build/css/'))
+    .pipe(minifyCss())
+    .pipe(md5(12))
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(gulp.dest('build/css/'));
+
+  gulp.src('www/index-tpl.html')
+    .pipe(inject(bowerScriptSource, pluginOpt.inject.bower))
+    .pipe(inject(bowerStyleSource, pluginOpt.inject.bower))
+    .pipe(inject(applicationScriptSource, pluginOpt.inject.application))
+    //.pipe(inject(applicationStyleSource, pluginOpt.inject.application))
+    .pipe(inject(componentsScriptSource, pluginOpt.inject.components))
+    .pipe(inject(componentsStyleSource, pluginOpt.inject.components))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('build/'));
+});
 
 //静态服务器任务
 gulp.task('serve', function () {
@@ -293,7 +368,7 @@ gulp.task('serve', function () {
 
   browserSync.init(baseServerOpts);
 
-  gulp.watch('./www/index.html', function () {
+  gulp.watch('./www/adminlte.html', function () {
     //gulp.run('local-build');
     browserSync.reload();
   });
